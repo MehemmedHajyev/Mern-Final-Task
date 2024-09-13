@@ -4,9 +4,9 @@ class Products {
         this.productName = props?.productName || '';
         this.productPrice = props?.productPrice || 0.0;
         this.productQuantity = props?.productQuantity || 0;
-        this.productCategory = props?.productCategory || 'Uncategorized';
+        this.productCategory = props?.productCategory || null;  // Kategori ID
         this.productDescription = props?.productDescription || '';
-        this.productImage = props?.productImage || '';
+        this.productImages = props?.productImages || [];
         this.productCreatedDate = props?.productCreatedDate || new Date();
         this.productUpdatedDate = new Date();
 
@@ -25,30 +25,30 @@ class Products {
     }
 
     updateProduct(newProps) {
-        // Məhsul məlumatlarını yeniləmək üçün buraya verilənlər bazası əməliyyatını əlavə edin
+        // Veritabanı güncelleme işlemi için gerekli sorguyu ekleyin
         this.productName = newProps?.productName || this.productName;
         this.productPrice = newProps?.productPrice || this.productPrice;
         this.productQuantity = newProps?.productQuantity || this.productQuantity;
-        this.productCategory = newProps?.productCategory || this.productCategory;
+        this.productCategory = newProps?.productCategory || this.productCategory;  // Kategori ID
         this.productDescription = newProps?.productDescription || this.productDescription;
-        this.productImage = newProps?.productImage || this.productImage;
+        this.productImages = newProps?.productImages || this.productImages;
         this.productUpdatedDate = new Date();
-        // Verilənlər bazasına update sorğusu göndərin
+        // Veritabanına update sorgusu gönderin
     }
 
     deleteProduct() {
-        // Məhsulu verilənlər bazasından silmək üçün buraya verilənlər bazası əməliyyatını əlavə edin
+        // Ürünü veritabanından silmek için gerekli sorguyu ekleyin
     }
 
     addProduct() {
-        // Yeni məhsulu verilənlər bazasına əlavə etmək üçün buraya verilənlər bazası əməliyyatını əlavə edin
+        // Yeni ürünü veritabanına eklemek için gerekli sorguyu ekleyin
     }
 
     updateProductQuantity(quantity) {
         if (quantity >= 0) {
             this.productQuantity = quantity;
             this.productUpdatedDate = new Date();
-            // Verilənlər bazasına update sorğusu göndərin
+            // Veritabanına update sorgusu gönderin
         }
     }
 }

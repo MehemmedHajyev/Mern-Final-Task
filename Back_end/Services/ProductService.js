@@ -5,15 +5,15 @@ const { Product } = require('../models/products/products');
 
 
 
-const getAllProduct = async (user) => {
+const getAllProduct = async (product) => {
     const result = await pool.query("select * from products", [
         result
     ]);
     if (!result) {
-        return new ErrorResult("User not found");
+        return new ErrorResult("Product not found");
     } else {
 
-        return new SuccessResult("User found successfully", user);
+        return new SuccessResult("Product found successfully", product);
     }
 
 };
